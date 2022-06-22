@@ -4,6 +4,7 @@
 // 4. stampare il risultato in pagina con massimo 2 decimali
 
 const button = document.getElementById('button');
+const reset = document.getElementById('reset');
 const elementName = document.getElementById('name');
 const elementAge = document.getElementById('age');
 const elementKm = document.getElementById('km');
@@ -22,10 +23,10 @@ button.addEventListener('click', function(){
 
     let finalPrice = ''
 
-    if (age = 'minorenne'){
+    if (age === 'minorenne'){
         finalPrice = (price / 100 * 80);
         console.log(finalPrice);    
-    } else if (age = 'over65') {
+    } else if (age === 'over65') {
         finalPrice = (price / 100 * 60);
         console.log(finalPrice);  
     } else {
@@ -36,5 +37,11 @@ button.addEventListener('click', function(){
 })
 
 
+reset.addEventListener('click', function(){
+    elementName.value = '';
+    elementAge.value = '';
+    elementKm.value = '';
+
+})
 
 
