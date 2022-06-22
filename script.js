@@ -24,17 +24,38 @@ button.addEventListener('click', function(){
     let finalPrice = ''
 
     if (age === 'minorenne'){
-        finalPrice = (price / 100 * 80);
-        console.log(finalPrice);    
-    } else if (age === 'over65') {
-        finalPrice = (price / 100 * 60);
+        finalPrice = (price / 100 * 80).toFixed(2);
         console.log(finalPrice);  
+        const offerParagraph = document.getElementById('offer');
+        offerParagraph.innerText = 'Ridotto' 
+    } else if (age === 'over65') {
+        finalPrice = (price / 100 * 60).toFixed(2);
+        console.log(finalPrice);  
+        const offerParagraph = document.getElementById('offer');
+        offerParagraph.innerText = 'Pensionati' 
     } else {
         finalPrice = price;
         console.log(finalPrice);  
+        const offerParagraph = document.getElementById('offer');
+        offerParagraph.innerText = 'Standard' 
     }
 
+
+    const priceParagraph = document.getElementById('ticket-price');
+    priceParagraph.innerText = finalPrice + '€'
+
+    const nameParagraph = document.getElementById('ticket-name');
+    nameParagraph.innerText = name
+
+    const carrozza = Math.floor(Math.random() * 10) + 1;
+    console.log(carrozza)
+
+    const carrozzaParagraph = document.getElementById('carrozza');
+    carrozzaParagraph.innerText = carrozza
+
 })
+
+
 
 
 reset.addEventListener('click', function(){
@@ -43,5 +64,6 @@ reset.addEventListener('click', function(){
     elementKm.value = '';
 
 })
+
 
 
